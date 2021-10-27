@@ -1,0 +1,51 @@
+version: '3'
+services:
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: ./Dockerfile
+    container_name: nginx
+    command:
+      /bin/sh -c "nginx -g 'daemon off;'"
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - web
+    networks:
+      - app-net
+    volumes:
+      - /etc/letsencrypt/live/fine-look.net/fullchain.pem:/etc/letsencrypt/live/fine-look.net/fullchain.pem
+      - /etc/letsencrypt/live/fine-look.net/privkey.pem:/etc/letsencrypt/live/fine-look.net/privkey.pem
+      - tmp-video:/usr/share/nginx/html/tmp-video
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    container_name: web
+    command:
+      /bin/sh -c "npm start"
+    depends_on:
+      - back-app
+    networks:
+      - app-net
+
+  back-app:
+    build: ./
+    container_name: back-app
+    command:
+      /bin/sh -c "node /api/app.js"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - app-net
+    volumes:
+      - ./tmp1:/api/logs
+      - tmp-video:/usr/share/nginx/html/tmp-video
+
+networks:
+  app-net:
+    driver: bridge
+volumes:
+  tmp-video:

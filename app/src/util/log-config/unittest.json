@@ -1,0 +1,31 @@
+{
+    "appenders": {
+        "access": {
+            "type": "console"
+        },
+        "error": {
+            "type": "console"
+        }
+    },
+    "categories": {
+        "default": {
+            "appenders": [
+                "access",
+                "error"
+            ],
+            "level": "INFO"
+        },
+        "access": {
+            "appenders": [
+                "access"
+            ],
+            "level": "INFO"
+        },
+        "error": {
+            "appenders": [
+                "error"
+            ],
+            "level": "WARN"
+        }
+    }
+}
