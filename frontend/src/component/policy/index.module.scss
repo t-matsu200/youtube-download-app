@@ -1,0 +1,46 @@
+.container {
+    padding: 4px 40px;
+    width: 100%;
+    margin-bottom: 20%;
+  }
+  
+  .container h1, .container h2, .container h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .container p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+  .container p a {
+    color: #428bca;
+  }
+
+  .container ul {
+    margin-top: 4px;
+    font-size: 14px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+  .container ul li {
+    margin: 0;
+  }
+
+  .link_return {
+    float: right;
+    margin-right: 6%;
+    margin-top: 2%;
+    color: #ffffff;
+    padding: 4px 8px;
+    background: dodgerblue;
+    border-radius: 3px;
+  }
+
+  .link_return:hover {
+    background: turquoise;
+    transition: 0.3s;
+  }
+

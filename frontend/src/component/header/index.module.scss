@@ -1,0 +1,19 @@
+.container {
+    padding: 10px;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    background: #55c500;
+    color: #ffffff;
+  }
+  
+  .header {
+    height: 44px;
+    vertical-align: middle;
+    white-space: nowrap;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
