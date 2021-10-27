@@ -35,7 +35,7 @@ const downloadService = (initialNum: number) => {
             document.body.appendChild(link);
             link.click();
             link.parentNode.removeChild(link);
-            router.push('/');
+            router.push('/complete');
         });
 
         socketRef.current.on('progress', (payload: string) => {
