@@ -1,0 +1,9 @@
+.ad_disp {
+  display: inline-block;
+}
+
+@media screen and (max-width: 680px) {
+	.ad_disp {
+    display: none;
+  }
+}
